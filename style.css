@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  max-width: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
+img {
+  display: block;
+}
+input {
+  outline: none;
+  border: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  box-shadow: 0 0 0 30px white inset !important;
+}
+button {
+  outline: none;
+  border: none;
+
+  display: block;
+  width: 100%;
+}
+
+main {
+  min-height: 100vh;
+  padding: 4em 0;
+  background: url(./images/bg-intro-mobile.png) hsl(0, 100%, 74%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 87.2%;
+  max-width: 1110px;
+
+  display: grid;
+  grid-template:
+    "info" auto
+    "submit" auto / 1fr;
+  row-gap: 63px;
+}
+
+.container__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.container__info h1 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: -0.5px;
+  padding-top: 1.44em;
+  color: white;
+}
+.container__info p {
+  padding-top: 1.37em;
+  line-height: 26px;
+  color: rgb(230, 230, 230);
+}
+
+.submit-box__description {
+  text-align: center;
+  border-radius: 12px;
+  padding: 1.19em 4.5em;
+  background-color: hsl(248, 32%, 49%);
+  box-shadow: 0 6px 0 0 rgba(0, 0, 0, 0.197);
+}
+.submit-box__description p {
+  color: white;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+.submit-box__description p span {
+  font-weight: 400;
+}
+
+.submit-box__inputs {
+  margin-top: 1.5em;
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5em;
+  box-shadow: 0 8px 0 0 rgba(0, 0, 0, 0.197);
+}
+
+.inputs + .inputs {
+  margin-top: 1em;
+}
+
+.inputs__inner {
+  padding: 1em 1.25em;
+  box-shadow: 0 0 0 1px hsl(246, 25%, 77%) inset;
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+}
+
+.inputs__inner:focus-within {
+  box-shadow: 0 0 0 1px hsl(249, 10%, 26%) inset;
+}
+
+.inputs__inner.active {
+  box-shadow: 0 0 0 2px hsl(0, 100%, 74%) inset;
+}
+
+.input {
+  flex-grow: 1;
+  font-family: "Poppins";
+  font-weight: 500;
+}
+
+.input::-webkit-input-placeholder {
+  font-weight: 600;
+}
+
+.input::placeholder {
+  font-weight: 600;
+}
+
+.input.active::placeholder {
+  color: hsl(0, 100%, 74%);
+}
+.input.active::-webkit-input-placeholder {
+  color: hsl(0, 100%, 74%);
+}
+.input.active::-moz-placeholder {
+  color: hsl(0, 100%, 74%);
+}
+
+.inputs__inner .err-icon {
+  padding-left: 0.5em;
+  opacity: 0;
+
+  -webkit-transition: opacity 0.4s linear;
+  transition: opacity 0.4s linear;
+}
+.inputs__inner .err-icon.active {
+  opacity: 1;
+}
+
+.error-message {
+  font-size: 0.68rem;
+  font-style: italic;
+  color: hsl(0, 100%, 74%);
+  text-align: end;
+  padding-top: 0.55em;
+
+  display: none;
+}
+.error-message.active {
+  display: block;
+}
+
+.show-psw {
+  display: flex;
+  margin-left: 0.5em;
+  cursor: pointer;
+}
+.show-psw #show-icn {
+  display: none;
+}
+
+.show-psw.active #hide-icn {
+  display: none;
+}
+.show-psw.active #show-icn {
+  display: block;
+}
+
+.submit-box__button {
+  margin-top: 1em;
+  margin-bottom: 5px; /*eliminates the affect of box shadow on lower el-s*/
+  padding: 1em;
+  cursor: pointer;
+
+  background-color: hsl(154, 59%, 51%);
+  box-shadow: 0 5px 0 0 #32b87d;
+  border-radius: 5px;
+}
+
+.submit-box__button.active {
+  background-color: #77e2b4;
+  transform: translateY(5px);
+  box-shadow: none;
+}
+
+.submit-box__button p {
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.submit-box__terms {
+  padding: 1em 1em 0;
+}
+.submit-box__terms p {
+  text-align: center;
+  font-size: 0.687rem;
+  letter-spacing: 0.6px;
+  color: hsl(246, 25%, 77%);
+}
+.submit-box__terms a {
+  color: hsl(0, 100%, 74%);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (min-width: 48rem) {
+  .container {
+    grid-template:
+      "info submit"
+      /1fr 1fr;
+    column-gap: 5.4%;
+  }
+  .container__info {
+    text-align: start;
+  }
+  .container__info h1 {
+    padding-top: 0;
+    font-size: 51px;
+    line-height: 52px;
+    letter-spacing: -1px;
+  }
+  .container__info p {
+    padding-top: 2em;
+  }
+  .submit-box__inputs {
+    padding: 2.5em;
+  }
+  .inputs__inner {
+    padding: 1em 1.5em;
+  }
+}
